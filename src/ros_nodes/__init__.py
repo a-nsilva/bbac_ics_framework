@@ -9,7 +9,7 @@ This package contains ROS2 node implementations:
 
 __version__ = "0.1.0"
 
-from .bbac_controller import BBACController
+from .controller import BBACController
 from .robot_agents import RobotAgentNode
 from .human_agents import HumanAgentNode
 
