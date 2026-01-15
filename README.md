@@ -103,8 +103,14 @@ bbac-framework/
 git clone https://github.com/yourusername/bbac-framework.git
 cd bbac-framework
 
+#chmod +x setup.sh
+./setup.sh
+
 # Install dependencies
 pip install -r requirements.txt
+
+# Source ROS2
+source /opt/ros/humble/setup.bash
 
 # Clone the dataset (private repository)
 git clone https://github.com/a-nsilva/bbac_ics_dataset.git data/bbac_ics_dataset
