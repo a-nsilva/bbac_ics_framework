@@ -1,0 +1,225 @@
+# BBAC Framework - Agent Behavioral Profiles
+# Version: 1.0
+
+# Robot Agents - Predictable Patterns
+robot_agents:
+  assembly_robot_001:
+    type: assembly_robot
+    behavior_pattern: highly_predictable
+    typical_actions:
+      - read:material_storage
+      - write:assembly_station_A
+      - execute:assembly_program_1
+    access_frequency:
+      read: 120  # accesses per hour
+      write: 60
+      execute: 30
+    temporal_pattern:
+      peak_hours: [08:00-12:00, 13:00-17:00]
+      low_hours: [00:00-06:00, 18:00-23:59]
+      weekend_activity: minimal
+    sequence_pattern:
+      - read:material_storage
+      - transport:assembly_station_A
+      - execute:assembly_program_1
+      - write:assembly_log
+      - return:material_storage
+    transition_probabilities:
+      from_idle:
+        to_reading: 0.85
+        to_executing: 0.10
+        to_maintenance: 0.05
+      from_reading:
+        to_executing: 0.90
+        to_idle: 0.08
+        to_error: 0.02
+      from_executing:
+        to_writing: 0.92
+        to_idle: 0.05
+        to_error: 0.03
+    
+  camera_robot_002:
+    type: camera_robot
+    behavior_pattern: predictable
+    typical_actions:
+      - read:inspection_station
+      - write:quality_db
+      - execute:vision_analysis
+    access_frequency:
+      read: 240
+      write: 200
+      execute: 180
+    temporal_pattern:
+      peak_hours: [09:00-11:00, 14:00-16:00]
+      continuous: true
+    sequence_pattern:
+      - read:inspection_station
+      - execute:vision_analysis
+      - write:quality_db
+      - notify:quality_control
+    transition_probabilities:
+      from_idle:
+        to_reading: 0.90
+        to_calibration: 0.10
+      from_reading:
+        to_executing: 0.95
+        to_error: 0.05
+      from_executing:
+        to_writing: 0.88
+        to_retry: 0.10
+        to_error: 0.02
+  
+  transport_robot_003:
+    type: transport_robot
+    behavior_pattern: predictable
+    typical_actions:
+      - read:material_storage
+      - transport:assembly_station_*
+      - write:transport_log
+    access_frequency:
+      read: 100
+      transport: 80
+      write: 80
+    temporal_pattern:
+      peak_hours: [08:00-10:00, 13:00-15:00]
+      route_based: true
+    sequence_pattern:
+      - read:material_storage
+      - navigate:route_1
+      - transport:assembly_station_A
+      - navigate:route_2
+      - return:material_storage
+      - write:transport_log
+    transition_probabilities:
+      from_idle:
+        to_reading: 0.80
+        to_charging: 0.15
+        to_maintenance: 0.05
+      from_reading:
+        to_transporting: 0.92
+        to_error: 0.08
+      from_transporting:
+        to_writing: 0.95
+        to_error: 0.05
+
+  inspection_robot_004:
+    type: inspection_robot
+    behavior_pattern: scheduled
+    typical_actions:
+      - read:production_schedule
+      - inspect:product_*
+      - write:inspection_report
+    access_frequency:
+      read: 50
+      inspect: 40
+      write: 40
+    temporal_pattern:
+      scheduled_intervals: [10:00, 14:00, 18:00]
+      duration: 30  # minutes
+    sequence_pattern:
+      - read:production_schedule
+      - inspect:product_batch
+      - analyze:quality_parameters
+      - write:inspection_report
+      - update:quality_metrics
+    transition_probabilities:
+      from_idle:
+        to_scheduled_run: 0.95
+        to_maintenance: 0.05
+      from_inspecting:
+        to_analyzing: 0.90
+        to_repeating: 0.08
+        to_error: 0.02
+
+# Human Agents - Variable Patterns
+human_agents:
+  supervisor_001:
+    type: supervisor
+    behavior_pattern: variable
+    typical_actions:
+      - read:all_resources
+      - write:production_schedule
+      - override:access_control
+      - approve:critical_operations
+    access_frequency:
+      read: 80
+      write: 30
+      override: 5
+    temporal_pattern:
+      work_hours: [07:00-18:00]
+      weekdays: true
+      irregular: true
+    behavioral_variance: high
+    decision_complexity: high
+    
+  operator_001:
+    type: operator
+    behavior_pattern: semi_predictable
+    typical_actions:
+      - read:assembly_station_A
+      - write:assembly_station_A
+      - monitor:robot_operations
+    access_frequency:
+      read: 120
+      write: 50
+      monitor: 200
+    temporal_pattern:
+      shift_based: true
+      shift_hours: [08:00-16:00]
+      break_times: [10:00, 12:00, 15:00]
+    behavioral_variance: medium
+    learning_period: 7  # days to establish baseline
+    
+  technician_001:
+    type: technician
+    behavior_pattern: maintenance_driven
+    typical_actions:
+      - read:all_equipment
+      - write:maintenance_log
+      - execute:diagnostic_tools
+      - maintenance:robot_*
+    access_frequency:
+      highly_variable: true
+      incident_driven: true
+    temporal_pattern:
+      on_call: true
+      scheduled_maintenance: [monday:09:00, friday:14:00]
+    behavioral_variance: high
+    expertise_level: high
+
+# Behavioral Learning Parameters
+learning_parameters:
+  markov_chain:
+    order: 2  # 2nd order Markov chain
+    smoothing: laplace
+    min_samples: 100
+    update_frequency: daily
+  
+  anomaly_detection:
+    contamination: 0.1
+    n_estimators: 100
+    max_samples: 256
+    random_state: 42
+  
+  thresholds:
+    robot_anomaly_score: 0.75
+    human_anomaly_score: 0.60
+    confidence_threshold: 0.70
+    
+# Agent Groups
+agent_groups:
+  production_robots:
+    - assembly_robot_001
+    - transport_robot_003
+    - inspection_robot_004
+  
+  quality_control:
+    - camera_robot_002
+    - inspection_robot_004
+    - operator_001
+  
+  maintenance_team:
+    - technician_001
+  
+  supervisory:
+    - supervisor_001

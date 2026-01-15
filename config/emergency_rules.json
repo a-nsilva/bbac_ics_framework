@@ -1,0 +1,137 @@
+{
+  "version": "1.0",
+  "description": "BBAC Emergency Override Rules",
+  "emergency_rules": {
+    "fire_alarm": {
+      "priority": 100,
+      "trigger": "fire_detected",
+      "actions": {
+        "all_robots": "emergency_stop",
+        "all_humans": "evacuate",
+        "safety_systems": "activate",
+        "network": "isolate"
+      },
+      "override": {
+        "access_control": "disabled",
+        "emergency_exits": "unlocked",
+        "power_control": "minimal"
+      },
+      "notifications": ["supervisor", "safety_officer", "emergency_services"]
+    },
+    "gas_leak": {
+      "priority": 95,
+      "trigger": "hazardous_gas_detected",
+      "actions": {
+        "all_robots": "emergency_stop",
+        "all_humans": "evacuate",
+        "ventilation": "activate",
+        "area": "isolate"
+      },
+      "override": {
+        "access_control": "restricted",
+        "zone_access": "emergency_only"
+      },
+      "notifications": ["supervisor", "safety_officer", "hazmat_team"]
+    },
+    "power_failure": {
+      "priority": 90,
+      "trigger": "main_power_loss",
+      "actions": {
+        "all_robots": "safe_shutdown",
+        "backup_power": "activate",
+        "critical_systems": "maintain"
+      },
+      "override": {
+        "access_control": "emergency_mode",
+        "critical_resources": "priority_access"
+      },
+      "notifications": ["supervisor", "maintenance_team"]
+    },
+    "security_breach": {
+      "priority": 85,
+      "trigger": "unauthorized_access_detected",
+      "actions": {
+        "suspicious_agent": "lockout",
+        "security_systems": "heightened_alert",
+        "access_logs": "detailed_recording"
+      },
+      "override": {
+        "authentication": "multi_factor_required",
+        "access_control": "strict_mode"
+      },
+      "notifications": ["supervisor", "security_team", "system_admin"]
+    },
+    "equipment_malfunction": {
+      "priority": 75,
+      "trigger": "critical_equipment_failure",
+      "actions": {
+        "affected_equipment": "isolate",
+        "dependent_robots": "hold_operations",
+        "maintenance": "dispatch"
+      },
+      "override": {
+        "maintenance_access": "expedited",
+        "production_schedule": "adjusted"
+      },
+      "notifications": ["supervisor", "maintenance_team", "production_manager"]
+    },
+    "network_attack": {
+      "priority": 88,
+      "trigger": "cyber_attack_detected",
+      "actions": {
+        "network": "isolate_affected_segments",
+        "authentication": "enhanced_verification",
+        "logging": "maximum_detail"
+      },
+      "override": {
+        "remote_access": "disabled",
+        "local_control_only": "enabled"
+      },
+      "notifications": ["supervisor", "cybersecurity_team", "system_admin"]
+    },
+    "human_injury": {
+      "priority": 98,
+      "trigger": "injury_detected",
+      "actions": {
+        "all_robots": "emergency_stop",
+        "area": "secure",
+        "first_aid": "dispatch",
+        "emergency_services": "contact"
+      },
+      "override": {
+        "access_control": "emergency_personnel_only"
+      },
+      "notifications": ["supervisor", "safety_officer", "medical_team", "emergency_services"]
+    }
+  },
+  "escalation_rules": {
+    "level_1": {
+      "threshold": "minor_anomaly",
+      "actions": ["log_event", "notify_operator"]
+    },
+    "level_2": {
+      "threshold": "moderate_anomaly",
+      "actions": ["log_event", "notify_supervisor", "increase_monitoring"]
+    },
+    "level_3": {
+      "threshold": "severe_anomaly",
+      "actions": ["log_event", "notify_all_stakeholders", "restrict_access", "require_approval"]
+    },
+    "level_4": {
+      "threshold": "critical_event",
+      "actions": ["activate_emergency_protocol", "full_system_lockdown"]
+    }
+  },
+  "recovery_procedures": {
+    "post_emergency": {
+      "steps": [
+        "verify_safety_conditions",
+        "inspect_equipment",
+        "reset_systems",
+        "restore_normal_operations"
+      ],
+      "required_approvals": ["supervisor", "safety_officer"],
+      "documentation": "mandatory"
+    }
+  }
+}

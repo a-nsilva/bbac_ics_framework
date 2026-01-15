@@ -1,0 +1,113 @@
+{
+  "version": "1.0",
+  "description": "BBAC Framework Access Control Policies",
+  "policies": {
+    "time_based": {
+      "work_hours": {
+        "enabled": true,
+        "start_time": "06:00",
+        "end_time": "22:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+        "actions": {
+          "read": "allow",
+          "write": "allow",
+          "execute": "allow"
+        }
+      },
+      "off_hours": {
+        "enabled": true,
+        "start_time": "22:00",
+        "end_time": "06:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+        "actions": {
+          "read": "allow",
+          "write": "deny",
+          "execute": "deny"
+        }
+      },
+      "weekend": {
+        "enabled": true,
+        "days": ["saturday", "sunday"],
+        "actions": {
+          "read": "allow",
+          "write": "require_approval",
+          "execute": "require_approval"
+        }
+      }
+    },
+    "role_based": {
+      "supervisor": {
+        "priority": 10,
+        "resources": ["*"],
+        "actions": ["read", "write", "execute", "delete", "override"],
+        "zones": ["production", "maintenance", "quality_control", "admin"]
+      },
+      "operator": {
+        "priority": 5,
+        "resources": ["assembly_station_*", "inspection_station_*"],
+        "actions": ["read", "write", "execute"],
+        "zones": ["production", "quality_control"]
+      },
+      "technician": {
+        "priority": 7,
+        "resources": ["*"],
+        "actions": ["read", "write", "maintenance"],
+        "zones": ["maintenance", "production"]
+      },
+      "assembly_robot": {
+        "priority": 8,
+        "resources": ["assembly_station_*", "material_storage_*"],
+        "actions": ["read", "write"],
+        "zones": ["production"]
+      },
+      "camera_robot": {
+        "priority": 6,
+        "resources": ["inspection_station_*", "quality_db"],
+        "actions": ["read", "write"],
+        "zones": ["quality_control"]
+      },
+      "transport_robot": {
+        "priority": 6,
+        "resources": ["material_storage_*", "assembly_station_*"],
+        "actions": ["read", "transport"],
+        "zones": ["production", "storage"]
+      }
+    },
+    "resource_constraints": {
+      "critical_resources": [
+        "emergency_stop",
+        "safety_system",
+        "power_control",
+        "network_gateway"
+      ],
+      "concurrent_access": {
+        "assembly_station_A": 2,
+        "assembly_station_B": 2,
+        "material_storage": 5,
+        "inspection_station": 1
+      },
+      "access_duration": {
+        "default_timeout": 300,
+        "max_session_time": 3600,
+        "idle_timeout": 600
+      }
+    },
+    "safety_constraints": {
+      "human_robot_proximity": {
+        "enabled": true,
+        "min_distance_meters": 2.0,
+        "max_robot_speed": 0.5,
+        "emergency_stop_required": true
+      },
+      "simultaneous_operations": {
+        "max_robots_per_zone": 3,
+        "require_supervisor_approval": ["zone_transition", "critical_operation"]
+      }
+    }
+  },
+  "thresholds": {
+    "anomaly_score_threshold": 0.7,
+    "behavioral_confidence_threshold": 0.6,
+    "rule_override_priority": 9
+  }
+}

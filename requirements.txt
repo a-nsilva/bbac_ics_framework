@@ -1,0 +1,66 @@
+# BBAC Framework - Requirements
+# Python 3.10 REQUIRED for ROS2 Humble
+# Based on tested configuration from previous project
+
+# ============================================================================
+# CORE DEPENDENCIES 
+# Python ML Stack
+pandas>=2.0.0           # Data manipulation
+numpy<2.0               # CRITICAL: numpy 2.x breaks sklearn 1.3.0
+scikit-learn==1.3.0     # Machine Learning (EXACT version - tested)
+tensorflow==2.13.0      # Deep Learning (for future extensions)
+
+# Visualization
+matplotlib>=3.7.0       # Plotting
+seaborn>=0.12.0         # Statistical visualization
+plotly>=5.15.0          # Interactive plots
+
+# Utilities
+tqdm>=4.65.0            # Progress bars
+pyyaml>=6.0             # Config files
+
+# Testing
+pytest>=7.4.0           # Unit testing
+
+# Optional (for notebooks)
+# jupyter>=1.0.0
+
+# ============================================================================
+# ROS2 - INSTALL VIA APT (NOT PIP!)
+# sudo apt update
+# sudo apt install ros-humble-desktop python3-pip
+# source /opt/ros/humble/setup.bash
+# 
+# NEVER: pip install rclpy (use system package only!)
+
+# ============================================================================
+# INSTALLATION STEPS
+# ============================================================================
+# 1. Check Python version (MUST be 3.10.x):
+#    python3 --version
+#
+# 2. Install ROS2 Humble (if not installed):
+#    sudo apt install ros-humble-desktop
+#
+# 3. Install Python dependencies:
+#    pip install -r requirements.txt
+#
+# 4. Verify installation:
+#    python3 -c "import numpy; print(f'numpy: {numpy.__version__}')"
+#    python3 -c "import sklearn; print(f'sklearn: {sklearn.__version__}')"
+#    python3 -c "import tensorflow; print(f'tensorflow: {tensorflow.__version__}')"
+
+# ============================================================================
+# KNOWN ISSUES & FIXES
+# ============================================================================
+# ❌ numpy >= 2.0 breaks scikit-learn 1.3.0
+#    Fix: numpy<2.0 in requirements
+#
+# ❌ tensorflow incompatible with newer numpy
+#    Fix: Keep numpy < 2.0
+#
+# ❌ rclpy conflicts if installed via pip
+#    Fix: Only use system ROS2 rclpy (via apt)
+#
+# ❌ Python 3.11+ not compatible with ROS2 Humble
+#    Fix: Use Python 3.10.x only
