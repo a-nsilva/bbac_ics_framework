@@ -103,7 +103,8 @@ bbac-framework/
 git clone https://github.com/yourusername/bbac-framework.git
 cd bbac-framework
 
-#chmod +x setup.sh
+# Install packages
+chmod +x setup.sh
 ./setup.sh
 
 # Install dependencies
