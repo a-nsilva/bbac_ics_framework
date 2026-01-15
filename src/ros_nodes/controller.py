@@ -23,9 +23,9 @@ import os
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from bbac_core.rule_engine import RuleEngine
-from bbac_core.behavioral_analysis import BehavioralAnalyzer
-from bbac_core.ml_detection import MLAnomalyDetector
+from core.rule_engine import RuleEngine
+from core.behavioral_analysis import BehavioralAnalyzer
+from core.ml_detection import MLAnomalyDetector
 
 
 class BBACController(Node):
