@@ -1,0 +1,22 @@
+{
+    "name": "BBAC ROS Development",
+    "image": "osrf/ros:humble-desktop-full",
+    "features": {
+         "ghcr.io/devcontainers/features/git:1": {}
+    },
+   "postCreateCommand": "pip3 install pandas scikit-learn tensorflow matplotlib plotly streamlit jupyter networkx scipy && apt-get update && apt-get install -y python3-pip",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "ms-iot.vscode-ros"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/bin/python3"
+            }
+        }
+    },
+    "forwardPorts": [8501, 8888, 8080],
+    "remoteUser": "root"
+}
