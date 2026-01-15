@@ -1,0 +1,37 @@
+{
+  "total_logs": 100000,
+  "total_agents": 50,
+  "num_robots": 40,
+  "num_humans": 10,
+  "date_range": {
+    "start": "2025-12-01 00:00:00",
+    "end": "2025-12-03 23:58:45.411369"
+  },
+  "action_distribution": {
+    "read": 39835,
+    "monitor": 23329,
+    "write": 11087,
+    "execute": 18505,
+    "modify": 3668,
+    "access": 2910,
+    "delete": 666
+  },
+  "resource_type_distribution": {
+    "sensor": 29350,
+    "database": 14884,
+    "camera": 15775,
+    "tool": 9706,
+    "zone": 16067,
+    "config": 2659,
+    "actuator": 11559
+  },
+  "anomaly_count": 5000,
+  "anomaly_rate": 0.05,
+  "anomaly_type_distribution": {
+    "behavioral_anomaly": 1263,
+    "frequency_anomaly": 999,
+    "temporal_anomaly": 1500,
+    "sequence_anomaly": 738,
+    "resource_anomaly": 500
+  }
+}
