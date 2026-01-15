@@ -1,0 +1,2313 @@
+[
+  {
+    "user_id": "robot_assembly_10",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_camera_24",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_camera_26",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_04",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_camera_22",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_transport_39",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_camera_17",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_transport_40",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_camera_20",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_12",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_technician_07",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "technician",
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "actions": {
+        "read": 0.35,
+        "modify": 0.25,
+        "write": 0.2,
+        "execute": 0.15,
+        "access": 0.05
+      },
+      "resources": [
+        "config_advanced",
+        "database_diagnostics",
+        "tool_calibration",
+        "sensor_maintenance",
+        "actuator_test_bench",
+        "zone_maintenance"
+      ],
+      "avg_time_gap_seconds": 600.0,
+      "std_time_gap_seconds": 300.0,
+      "action_duration_mean": 300.0,
+      "action_duration_std": 120.0,
+      "human_presence_prob": 1.0,
+      "predictability": "low"
+    }
+  },
+  {
+    "user_id": "robot_camera_25",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_34",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_30",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_32",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "human_operator_04",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_05",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_29",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_11",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_27",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_transport_37",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_01",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_operator_05",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_camera_19",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_operator_03",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_08",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_transport_36",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "human_supervisor_09",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "supervisor",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.5,
+        "monitor": 0.25,
+        "write": 0.15,
+        "access": 0.1
+      },
+      "resources": [
+        "database_reports",
+        "database_analytics",
+        "config_permissions",
+        "zone_all_access",
+        "sensor_overview",
+        "camera_all_zones"
+      ],
+      "avg_time_gap_seconds": 900.0,
+      "std_time_gap_seconds": 450.0,
+      "action_duration_mean": 240.0,
+      "action_duration_std": 90.0,
+      "human_presence_prob": 1.0,
+      "predictability": "low"
+    }
+  },
+  {
+    "user_id": "robot_inspection_31",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_camera_21",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_camera_23",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_13",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_operator_01",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_inspection_33",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "human_technician_06",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "technician",
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "actions": {
+        "read": 0.35,
+        "modify": 0.25,
+        "write": 0.2,
+        "execute": 0.15,
+        "access": 0.05
+      },
+      "resources": [
+        "config_advanced",
+        "database_diagnostics",
+        "tool_calibration",
+        "sensor_maintenance",
+        "actuator_test_bench",
+        "zone_maintenance"
+      ],
+      "avg_time_gap_seconds": 600.0,
+      "std_time_gap_seconds": 300.0,
+      "action_duration_mean": 300.0,
+      "action_duration_std": 120.0,
+      "human_presence_prob": 1.0,
+      "predictability": "low"
+    }
+  },
+  {
+    "user_id": "robot_assembly_14",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_operator_02",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "human_operator_10",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "operator",
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "actions": {
+        "read": 0.45,
+        "write": 0.25,
+        "execute": 0.2,
+        "modify": 0.1
+      },
+      "resources": [
+        "config_machine_01",
+        "config_machine_02",
+        "database_production",
+        "tool_manual_override",
+        "sensor_dashboard",
+        "actuator_control_panel"
+      ],
+      "avg_time_gap_seconds": 300.0,
+      "std_time_gap_seconds": 120.0,
+      "action_duration_mean": 180.0,
+      "action_duration_std": 60.0,
+      "human_presence_prob": 1.0,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_03",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_inspection_28",
+    "agent_type": "robot",
+    "robot_type": "inspection_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "actions": {
+        "read": 0.45,
+        "monitor": 0.3,
+        "write": 0.15,
+        "execute": 0.1
+      },
+      "resources": [
+        "sensor_temperature_01",
+        "sensor_temperature_02",
+        "sensor_pressure_01",
+        "sensor_vibration_01",
+        "camera_inspection_01",
+        "database_reports"
+      ],
+      "avg_time_gap_seconds": 60.0,
+      "std_time_gap_seconds": 20.0,
+      "action_duration_mean": 45.0,
+      "action_duration_std": 15.0,
+      "human_presence_prob": 0.15,
+      "predictability": "medium-high"
+    }
+  },
+  {
+    "user_id": "robot_transport_38",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_06",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_transport_35",
+    "agent_type": "robot",
+    "robot_type": "transport_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "actions": {
+        "read": 0.4,
+        "execute": 0.35,
+        "access": 0.15,
+        "write": 0.1
+      },
+      "resources": [
+        "zone_warehouse_a",
+        "zone_warehouse_b",
+        "zone_production",
+        "zone_shipping",
+        "sensor_navigation_01",
+        "actuator_wheels_01",
+        "database_inventory"
+      ],
+      "avg_time_gap_seconds": 90.0,
+      "std_time_gap_seconds": 30.0,
+      "action_duration_mean": 120.0,
+      "action_duration_std": 40.0,
+      "human_presence_prob": 0.25,
+      "predictability": "medium"
+    }
+  },
+  {
+    "user_id": "robot_assembly_07",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_09",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_15",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_assembly_16",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "robot_camera_18",
+    "agent_type": "robot",
+    "robot_type": "camera_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "actions": {
+        "monitor": 0.6,
+        "read": 0.3,
+        "write": 0.08,
+        "access": 0.02
+      },
+      "resources": [
+        "camera_zone_a",
+        "camera_zone_b",
+        "camera_zone_c",
+        "sensor_motion_01",
+        "sensor_motion_02",
+        "database_footage",
+        "database_alerts"
+      ],
+      "avg_time_gap_seconds": 30.0,
+      "std_time_gap_seconds": 10.0,
+      "action_duration_mean": 5.0,
+      "action_duration_std": 2.0,
+      "human_presence_prob": 0.05,
+      "predictability": "high"
+    }
+  },
+  {
+    "user_id": "human_technician_08",
+    "agent_type": "human",
+    "robot_type": null,
+    "human_role": "technician",
+    "behavior_pattern": {
+      "working_hours": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "actions": {
+        "read": 0.35,
+        "modify": 0.25,
+        "write": 0.2,
+        "execute": 0.15,
+        "access": 0.05
+      },
+      "resources": [
+        "config_advanced",
+        "database_diagnostics",
+        "tool_calibration",
+        "sensor_maintenance",
+        "actuator_test_bench",
+        "zone_maintenance"
+      ],
+      "avg_time_gap_seconds": 600.0,
+      "std_time_gap_seconds": 300.0,
+      "action_duration_mean": 300.0,
+      "action_duration_std": 120.0,
+      "human_presence_prob": 1.0,
+      "predictability": "low"
+    }
+  },
+  {
+    "user_id": "robot_assembly_02",
+    "agent_type": "robot",
+    "robot_type": "assembly_robot",
+    "human_role": null,
+    "behavior_pattern": {
+      "working_hours": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "actions": {
+        "read": 0.5,
+        "execute": 0.35,
+        "write": 0.1,
+        "modify": 0.05
+      },
+      "resources": [
+        "actuator_arm_01",
+        "actuator_arm_02",
+        "sensor_force_01",
+        "sensor_force_02",
+        "tool_gripper_01",
+        "tool_gripper_02",
+        "zone_assembly_a",
+        "zone_assembly_b"
+      ],
+      "avg_time_gap_seconds": 45.0,
+      "std_time_gap_seconds": 15.0,
+      "action_duration_mean": 30.0,
+      "action_duration_std": 10.0,
+      "human_presence_prob": 0.2,
+      "predictability": "high"
+    }
+  }
+]
