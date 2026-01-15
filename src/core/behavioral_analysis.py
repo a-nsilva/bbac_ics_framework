@@ -8,12 +8,15 @@ This module implements behavioral pattern analysis using:
 - Agent-specific behavioral profiles
 """
 
-import numpy as np
-import pandas as pd
-from typing import Dict, List, Tuple, Optional
-from collections import defaultdict, deque
+# Biblioteca padrão
 import json
 import logging
+from collections import defaultdict, deque
+from typing import Dict, List, Tuple, Optional
+
+# Bibliotecas de terceiros
+import numpy as np
+import pandas as pd
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -414,55 +417,6 @@ class MarkovModel:
 
 
 if __name__ == "__main__":
-    # Test the behavioral analyzer
-    analyzer = BehavioralAnalyzer(order=2)
-    
-    # Create sample training data
-    data = {
-        'agent_id': ['robot_001'] * 100,
-        'resource_id': ['assembly_station_A'] * 40 + ['material_storage'] * 30 + 
-                       ['assembly_station_A'] * 30,
-        'action': ['read'] * 35 + ['write'] * 35 + ['read'] * 30,
-        'timestamp': pd.date_range(start='2024-01-01', periods=100, freq='5min')
-    }
-    training_data = pd.DataFrame(data)
-    
-    # Train model
-    analyzer.train(training_data, agent_id='robot_001')
-    
-    # Test prediction - normal behavior
-    request1 = {
-        'agent_id': 'robot_001',
-        'resource_id': 'assembly_station_A',
-        'action': 'write'
-    }
-    
-    # Initialize history
-    analyzer._update_agent_history('robot_001', 'material_storage:read')
-    analyzer._update_agent_history('robot_001', 'assembly_station_A:read')
-    
-    decision, confidence, explanation = analyzer.evaluate_access_request(request1)
-    print(f"\nTest 1 - Normal behavior:")
-    print(f"  Decision: {decision} (confidence: {confidence:.3f})")
-    print(f"  Reason: {explanation['decision_reason']}")
-    print(f"  Behavioral score: {explanation['behavioral_score']:.3f}")
-    
-    # Test prediction - anomalous behavior
-    request2 = {
-        'agent_id': 'robot_001',
-        'resource_id': 'unknown_resource',
-        'action': 'delete'
-    }
-    
-    decision, confidence, explanation = analyzer.evaluate_access_request(request2)
-    print(f"\nTest 2 - Anomalous behavior:")
-    print(f"  Decision: {decision} (confidence: {confidence:.3f})")
-    print(f"  Reason: {explanation['decision_reason']}")
-    print(f"  Behavioral score: {explanation['behavioral_score']:.3f}")
-    
-    # Get statistics
-    stats = analyzer.get_agent_statistics('robot_001')
-    print(f"\nAgent Statistics:")
-    print(f"  Unique states: {stats['num_states']}")
-    print(f"  Total transitions: {stats['num_transitions']}")
-    print(f"  Most common states: {stats['most_common_states']}")
+    print("BehavioralAnalyzer - Layer 2")
+    print("This module requires training data from bbac_ics_dataset.")
+    print("Use train_models.py to train the models with real data.")
