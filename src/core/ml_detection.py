@@ -8,14 +8,17 @@ This module implements machine learning-based anomaly detection using:
 - Anomaly scoring and threshold-based decisions
 """
 
+# 1. Biblioteca padrão
+import logging
+from datetime import datetime
+from typing import Dict, List, Tuple, Optional
+
+# 2. Bibliotecas de terceiros
 import numpy as np
 import pandas as pd
-from typing import Dict, List, Tuple, Optional
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
 import joblib
-import logging
-from datetime import datetime
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -438,63 +441,6 @@ class MLAnomalyDetector:
 
 
 if __name__ == "__main__":
-    # Test the ML anomaly detector
-    detector = MLAnomalyDetector(contamination=0.1, n_estimators=50)
-    
-    # Create sample training data
-    np.random.seed(42)
-    n_samples = 200
-    
-    data = {
-        'agent_id': ['robot_001'] * n_samples,
-        'agent_type': ['robot'] * n_samples,
-        'resource_id': np.random.choice(['assembly_station_A', 'material_storage'], n_samples),
-        'action': np.random.choice(['read', 'write'], n_samples, p=[0.6, 0.4]),
-        'timestamp': pd.date_range(start='2024-01-01', periods=n_samples, freq='5min'),
-        'zone': ['production'] * n_samples,
-        'decision': ['grant'] * n_samples
-    }
-    training_data = pd.DataFrame(data)
-    
-    # Train model
-    detector.train(training_data, agent_type='robot')
-    
-    # Test 1: Normal request
-    request1 = {
-        'agent_id': 'robot_001',
-        'agent_type': 'robot',
-        'resource_id': 'assembly_station_A',
-        'action': 'read',
-        'timestamp': datetime(2024, 1, 15, 10, 30),
-        'context': {'zone': 'production'}
-    }
-    
-    decision, confidence, explanation = detector.evaluate_access_request(request1)
-    print(f"\nTest 1 - Normal behavior:")
-    print(f"  Decision: {decision} (confidence: {confidence:.3f})")
-    print(f"  Reason: {explanation['decision_reason']}")
-    print(f"  Anomaly score: {explanation['anomaly_score']:.3f}")
-    print(f"  Normalized score: {explanation['normalized_score']:.3f}")
-    
-    # Test 2: Anomalous request (unusual time, action, resource)
-    request2 = {
-        'agent_id': 'robot_001',
-        'agent_type': 'robot',
-        'resource_id': 'unknown_resource',
-        'action': 'delete',
-        'timestamp': datetime(2024, 1, 15, 3, 0),  # 3 AM
-        'context': {'zone': 'admin'}
-    }
-    
-    decision, confidence, explanation = detector.evaluate_access_request(request2)
-    print(f"\nTest 2 - Anomalous behavior:")
-    print(f"  Decision: {decision} (confidence: {confidence:.3f})")
-    print(f"  Reason: {explanation['decision_reason']}")
-    print(f"  Anomaly score: {explanation['anomaly_score']:.3f}")
-    print(f"  Normalized score: {explanation['normalized_score']:.3f}")
-    
-    # Model info
-    info = detector.get_model_info()
-    print(f"\nModel Info:")
-    print(f"  Agent types: {info['agent_types']}")
-    print(f"  Features: {info['feature_names']}")
+    print("MLAnomalyDetector - Layer 3")
+    print("This module requires training data from bbac_ics_dataset.")
+    print("Use train_models.py to train the models with real data.")
