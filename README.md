@@ -47,40 +47,45 @@ The framework achieves **sub-100ms latency** for real-time decision-making in ro
 bbac-framework/
 ├── README.md                          # This file
 ├── LICENSE                            # Apache 2.0 license
+├── main.py                            # 
 ├── requirements.txt                   # Python dependencies
+├── setup.sh                           # 
 ├── .devcontainer/
 │   └── devcontainer.json             # GitHub Codespaces configuration
-├── src/
-│   ├── core/                         # Core BBAC modules
-│   │   ├── __init__.py
-│   │   ├── behavioral_analysis.py    # Layer 2: Markov Chain
-│   │   ├── ml_detection.py           # Layer 3: Isolation Forest
-│   │   └── rule_engine.py            # Layer 1: Rules
-│   ├── ros_nodes/                    # ROS2 nodes
-│   │   ├── __init__.py
-│   │   ├── bbac_controller.py        # Main BBAC controller
-│   │   ├── robot_agents.py           # Robot agent simulation
-│   │   └── human_agents.py           # Human agent simulation
-│   ├── messages/                     # ROS2 custom messages
-│   │   ├── AccessRequest.msg
-│   │   └── AccessDecision.msg
-├── uil/                              # Data utilities
-│   ├── __init__.py
-│   └── dataset_loader.py             # Load bbac_ics_dataset
-├── test/                             # Test suite
-│   ├── minimal_test.py               # Quick validation
-│   ├── complete_hybrid.py            # Full system test
-│   └── ablation_study.py             # Layer analysis
 ├── config/                           # Configuration files
 │   ├── robot_profiles.yaml           # Agent behavioral profiles
 │   ├── policies.json                 # Access control policies
 │   └── emergency_rules.json          # Emergency scenarios
 ├── data/                             # Dataset directory
-│   └── README.md                     # Data documentation
-└── results/                          # Results and outputs
-    ├── metrics/                      # Performance metrics
-    ├── plots/                        # Visualizations
-    └── ablation/                     # Ablation study results
+│   ├── README.md                     # Data documentation
+│   ├── __init__.py
+│   └── dataset_loader.py             # Load bbac_ics_dataset
+├── results/                          # Results and outputs
+│   ├── metrics/                      # Performance metrics
+│   ├── plots/                        # Visualizations
+│   └── ablation/                     # Ablation study results
+└── src/
+    ├── core/                         # Core BBAC modules
+    │   ├── __init__.py
+    │   ├── behavioral_analysis.py    # Layer 2: Markov Chain
+    │   ├── ml_detection.py           # Layer 3: Isolation Forest
+    │   └── rule_engine.py            # Layer 1: Rules
+    ├── experiment/
+    │   ├── __init__.py
+    │   ├── ablation.py               #
+    |   ├── baseline_comparison.py    #
+    |   ├── metrics.py                #
+    │   ├── run.py                    # 
+    │   └── scenarios.py              #
+    ├── messages/                     # ROS2 custom messages
+    │   ├── AccessRequest.msg
+    │   └── AccessDecision.msg
+    └── ros_nodes/                    # ROS2 nodes
+        ├── __init__.py
+        ├── bbac_controller.py        # BBAC controller
+        ├── robot_agents.py           # Robot agent simulation
+        └── human_agents.py           # Human agent simulation
+    
 ```
 
 ## 🚀 Quick Start
