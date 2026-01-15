@@ -18,20 +18,20 @@ The framework achieves **sub-100ms latency** for real-time decision-making in ro
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                  BBAC Access Control System                  │
-├──────────────────┬──────────────────┬────────────────────────┤
-│   Layer 1:       │   Layer 2:       │   Layer 3:             │
-│   Rule-based     │   Behavioral     │   ML Anomaly           │
-│   - Emergency    │   - Markov Chain │   - Isolation Forest   │
-│   - Time Policy  │   - Transitions  │   - Feature Extract    │
-│   - Admin        │   - Sequences    │   - Anomaly Score      │
-└──────────────────┴──────────────────┴────────────────────────┘
+│                  BBAC Access Control System                 │
+├──────────────────┬──────────────────┬───────────────────────┤
+│   Layer 1:       │   Layer 2:       │   Layer 3:            │
+│   Rule-based     │   Behavioral     │   ML Anomaly          │
+│   - Emergency    │   - Markov Chain │   - Isolation Forest  │
+│   - Time Policy  │   - Transitions  │   - Feature Extract   │
+│   - Admin        │   - Sequences    │   - Anomaly Score     │
+└──────────────────┴──────────────────┴───────────────────────┘
                            ▼
             ┌──────────────────────────────┐
-            │  ROS2 Communication Layer     │
-            │  Topics: /access_requests     │
-            │         /access_decisions     │
-            │         /emergency_alerts     │
+            │  ROS2 Communication Layer    │
+            │  Topics: /access_requests    │
+            │         /access_decisions    │
+            │         /emergency_alerts    │
             └──────────────────────────────┘
                            ▼
        ┌─────────────┬──────────────┬─────────────┐
@@ -50,7 +50,7 @@ bbac-framework/
 ├── .devcontainer/
 │   └── devcontainer.json             # GitHub Codespaces configuration
 ├── src/
-│   ├── bbac_core/                    # Core BBAC modules
+│   ├── core/                         # Core BBAC modules
 │   │   ├── __init__.py
 │   │   ├── behavioral_analysis.py    # Layer 2: Markov Chain
 │   │   ├── ml_detection.py           # Layer 3: Isolation Forest
@@ -63,19 +63,18 @@ bbac-framework/
 │   ├── messages/                     # ROS2 custom messages
 │   │   ├── AccessRequest.msg
 │   │   └── AccessDecision.msg
-│   ├── data/                         # Data utilities
-│   │   ├── __init__.py
-│   │   └── dataset_loader.py         # Load bbac_ics_dataset
-│   └── tests/                        # Test suite
-│       ├── bbac_minimal_test.py      # Quick validation
-│       ├── bbac_complete_hybrid.py   # Full system test
-│       └── ablation_study.py         # Layer analysis
+├── uil/                              # Data utilities
+│   ├── __init__.py
+│   └── dataset_loader.py             # Load bbac_ics_dataset
+├── test/                             # Test suite
+│   ├── minimal_test.py               # Quick validation
+│   ├── complete_hybrid.py            # Full system test
+│   └── ablation_study.py             # Layer analysis
 ├── config/                           # Configuration files
 │   ├── robot_profiles.yaml           # Agent behavioral profiles
 │   ├── policies.json                 # Access control policies
 │   └── emergency_rules.json          # Emergency scenarios
 ├── data/                             # Dataset directory
-│   ├── sample_logs.csv               # Sample data for testing
 │   └── README.md                     # Data documentation
 └── results/                          # Results and outputs
     ├── metrics/                      # Performance metrics
