@@ -16,9 +16,9 @@ import threading
 # Add paths
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from ros_nodes.bbac_controller import BBACController
-from ros_nodes.robot_agents import AssemblyRobotNode, CameraRobotNode
-from ros_nodes.human_agents import OperatorNode
+from src.ros_nodes.controller import BBACController
+from src.ros_nodes.robot_agents import AssemblyRobotNode, CameraRobotNode
+from src.ros_nodes.human_agents import OperatorNode
 
 
 def run_minimal_test(duration=30):
