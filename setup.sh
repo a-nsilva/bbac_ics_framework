@@ -66,6 +66,12 @@ fi
 # Install Python dependencies
 echo ""
 echo "[4/6] Installing Python dependencies..."
+# Check if pip is installed
+if ! command -v pip &> /dev/null; then
+    echo "pip not found, installing..."
+    apt-get update
+    apt-get install -y python3-pip
+fi
 pip install --upgrade pip
 pip install -r requirements.txt
 
@@ -100,12 +106,12 @@ echo "=========================================="
 echo ""
 echo "Quick Start:"
 echo "  1. Run minimal test:"
-echo "     python3 src/tests/bbac_minimal_test.py"
+echo "     python3 test/minimal.py"
 echo ""
 echo "  2. Run individual components:"
-echo "     python3 src/bbac_core/rule_engine.py"
-echo "     python3 src/bbac_core/behavioral_analysis.py"
-echo "     python3 src/bbac_core/ml_detection.py"
+echo "     python3 src/core/rule_engine.py"
+echo "     python3 src/core/behavioral_analysis.py"
+echo "     python3 src/core/ml_detection.py"
 echo ""
 echo "  3. Run with ROS2 (3 terminals):"
 echo "     Terminal 1: python3 src/ros_nodes/bbac_controller.py"
