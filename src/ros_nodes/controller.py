@@ -10,22 +10,26 @@ Integrates all three decision layers:
 ROS2 Humble compatible
 """
 
+# Biblioteca padrão
+import json
+import os
+import sys
+import time
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Tuple
+
+# Bibliotecas ROS 2
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-import json
-import time
-from datetime import datetime
-from typing import Dict, Tuple
-import sys
-import os
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core.rule_engine import RuleEngine
-from core.behavioral_analysis import BehavioralAnalyzer
-from core.ml_detection import MLAnomalyDetector
+from bbac_core.rule_engine import RuleEngine
+from bbac_core.behavioral_analysis import BehavioralAnalyzer
+from bbac_core.ml_detection import MLAnomalyDetector
 
 
 class BBACController(Node):
@@ -80,15 +84,67 @@ class BBACController(Node):
         self.get_logger().info('BBAC Controller initialized successfully')
         self.get_logger().info('Listening on /access_requests...')
     
+    def _check_and_train_models(self):
+        """
+        Check if trained models exist. If not, train them automatically.
+        
+        Returns:
+            Tuple of (behavioral_model_path, ml_model_path) or (None, None)
+        """
+        models_dir = Path('models')
+        behavioral_path = models_dir / 'behavioral_models.json'
+        ml_path = models_dir / 'ml_models.pkl'
+        
+        # Check if models exist
+        if behavioral_path.exists() and ml_path.exists():
+            self.get_logger().info('Found existing trained models')
+            return str(behavioral_path), str(ml_path)
+        
+        # Models don't exist - need to train
+        self.get_logger().warn('Trained models not found. Auto-training...')
+        self.get_logger().warn('This is a one-time operation and may take a few minutes.')
+        
+        try:
+            # Import trainer
+            sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+            from train_models import ModelTrainer
+            
+            # Train models
+            self.get_logger().info('Starting model training with dataset...')
+            trainer = ModelTrainer(data_path='data/data_100k', models_path='models')
+            
+            # Run training
+            success = trainer.run()
+            
+            if success:
+                self.get_logger().info('Model training completed successfully')
+                return str(behavioral_path), str(ml_path)
+            else:
+                self.get_logger().error('Model training failed')
+                return None, None
+                
+        except FileNotFoundError as e:
+            self.get_logger().error(f'Dataset not found: {e}')
+            self.get_logger().error('Please ensure bbac_ics_dataset has been generated first.')
+            return None, None
+        except Exception as e:
+            self.get_logger().error(f'Error during auto-training: {e}')
+            import traceback
+            traceback.print_exc()
+            return None, None
+    
     def _initialize_layers(self):
         """Initialize all three decision layers."""
         try:
-            # Layer 1: Rule Engine
+            # Layer 1: Rule Engine (always uses config files)
             self.get_logger().info('Loading Layer 1: Rule Engine...')
             self.rule_engine = RuleEngine(
                 policies_path='config/policies.json',
                 emergency_rules_path='config/emergency_rules.json'
             )
+            
+            # Check and train models if needed
+            behavioral_model, ml_model = self._check_and_train_models()
             
             # Layer 2: Behavioral Analyzer
             self.get_logger().info('Loading Layer 2: Behavioral Analyzer...')
@@ -98,6 +154,16 @@ class BBACController(Node):
                 min_samples=50
             )
             
+            # Load trained model if available
+            if behavioral_model:
+                success = self.behavioral_analyzer.load_models(behavioral_model)
+                if success:
+                    self.get_logger().info(f'Loaded behavioral models from {behavioral_model}')
+                else:
+                    self.get_logger().warn('Failed to load behavioral models, using untrained model')
+            else:
+                self.get_logger().warn('No behavioral models available, using untrained model')
+            
             # Layer 3: ML Anomaly Detector
             self.get_logger().info('Loading Layer 3: ML Anomaly Detector...')
             self.ml_detector = MLAnomalyDetector(
@@ -105,6 +171,16 @@ class BBACController(Node):
                 n_estimators=100,
                 anomaly_threshold=0.7
             )
+            
+            # Load trained model if available
+            if ml_model:
+                success = self.ml_detector.load_models(ml_model)
+                if success:
+                    self.get_logger().info(f'Loaded ML models from {ml_model}')
+                else:
+                    self.get_logger().warn('Failed to load ML models, using untrained model')
+            else:
+                self.get_logger().warn('No ML models available, using untrained model')
             
             self.get_logger().info('All layers initialized successfully')
             
