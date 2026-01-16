@@ -9,11 +9,12 @@ This module implements the rule-based access control layer with:
 - Resource constraints
 """
 
+# Biblioteca padrão
 import json
-from typing import Dict, List, Optional, Tuple
-from datetime import datetime, time
-from pathlib import Path
 import logging
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Tuple
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
