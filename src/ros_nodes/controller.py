@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Main Controller Node
 
@@ -10,27 +9,23 @@ Integrates all three decision layers:
 ROS2 Humble compatible
 """
 
-# Biblioteca padrão
+
 import json
 import os
-import sys
 import time
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Tuple
 
-# Bibliotecas ROS 2
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-# Add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from bbac_core.rule_engine import RuleEngine
-from bbac_core.behavioral_analysis import BehavioralAnalyzer
-from bbac_core.ml_detection import MLAnomalyDetector
-
+from core.behavioral_analysis import BehavioralAnalyzer
+from core.ml_detection import MLAnomalyDetector
+from core.rule_engine import RuleEngine
 
 class BBACController(Node):
     """
