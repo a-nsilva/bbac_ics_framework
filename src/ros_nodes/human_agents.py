@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Human Agent Nodes
 
@@ -6,13 +5,15 @@ Simulates human agents with variable behavior patterns.
 Humans have less predictable patterns compared to robots.
 """
 
+# 1. Biblioteca padrão
+import random
+import uuid
+from datetime import datetime
+
+# 2. Bibliotecas de terceiros
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-import json
-import uuid
-from datetime import datetime
-import random
 
 
 class HumanAgentNode(Node):
