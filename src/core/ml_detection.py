@@ -14,11 +14,11 @@ from datetime import datetime
 from typing import Dict, List, Tuple, Optional
 
 # 2. Bibliotecas de terceiros
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler
-import joblib
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
