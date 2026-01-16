@@ -15,13 +15,10 @@ from pathlib import Path
 # 2. Bibliotecas de terceiros
 import pandas as pd
 
-
-# Add src to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
-from data.dataset_loader import DatasetLoader
+# 3. Imports locais do projeto
 from core.behavioral_analysis import BehavioralAnalyzer
 from core.ml_detection import MLAnomalyDetector
+from data.dataset_loader import DatasetLoader
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
