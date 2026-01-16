@@ -4,14 +4,14 @@ BBAC Framework - Dataset Loader
 This module handles loading and preprocessing of the bbac_ics_dataset.
 """
 
-# Biblioteca padrão
+# 1. Biblioteca padrão
 import json
 import logging
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 
-# Bibliotecas de terceiros
+# 2. Bibliotecas de terceiros
 import numpy as np
 import pandas as pd
 import yaml
