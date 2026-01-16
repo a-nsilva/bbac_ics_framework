@@ -8,13 +8,13 @@ This module implements behavioral pattern analysis using:
 - Agent-specific behavioral profiles
 """
 
-# Biblioteca padrão
+# 1. Biblioteca padrão
 import json
 import logging
 from collections import defaultdict, deque
 from typing import Dict, List, Tuple, Optional
 
-# Bibliotecas de terceiros
+# 2. Bibliotecas de terceiros
 import numpy as np
 import pandas as pd
 
