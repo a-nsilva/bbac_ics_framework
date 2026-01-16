@@ -9,7 +9,7 @@ Integrates all three decision layers:
 ROS2 Humble compatible
 """
 
-
+# 1. Biblioteca padrão
 import json
 import os
 import time
@@ -17,12 +17,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, Tuple
 
-
+# 2. Bibliotecas de terceiros
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
-
+# 3. Imports locais
 from core.behavioral_analysis import BehavioralAnalyzer
 from core.ml_detection import MLAnomalyDetector
 from core.rule_engine import RuleEngine
