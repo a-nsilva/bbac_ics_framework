@@ -7,7 +7,7 @@ Comprehensive metrics collection for experiments
 import time
 from typing import Dict, List
 
-
+# 2. Bibliotecas de terceiros
 import numpy as np
 
 
