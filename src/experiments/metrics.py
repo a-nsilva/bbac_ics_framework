@@ -1,11 +1,13 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Metrics Collector
 Comprehensive metrics collection for experiments
 """
 
+# 1. Biblioteca padrão
 import time
 from typing import Dict, List
+
+
 import numpy as np
 
 
