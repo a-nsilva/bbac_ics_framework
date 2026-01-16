@@ -3,25 +3,27 @@ BBAC Framework - Experiment Runner
 Main engine for running experiments and collecting metrics
 """
 
-# 2. Bibliotecas de terceiros
-# 3. Imports locais
-
-import rclpy
-from rclpy.executors import MultiThreadedExecutor
-import time
+# 1. Biblioteca padrão
 import json
 import os
+import time
 from datetime import datetime
 from pathlib import Path
-import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# 2. Bibliotecas de terceiros
+import rclpy
+from rclpy.executors import MultiThreadedExecutor
 
-from ros_nodes.controller import BBACController
-from ros_nodes.robot_agents import AssemblyRobotNode, CameraRobotNode, TransportRobotNode
-from ros_nodes.human_agents import SupervisorNode, OperatorNode, TechnicianNode
-from experiments.scenarios import ScenarioManager
+# 3. Imports locais
 from experiments.metrics import MetricsCollector
+from experiments.scenarios import ScenarioManager
+from ros_nodes.controller import BBACController
+from ros_nodes.human_agents import SupervisorNode, OperatorNode, TechnicianNode
+from ros_nodes.robot_agents import (
+    AssemblyRobotNode,
+    CameraRobotNode,
+    TransportRobotNode,
+)
 
 
 class ExperimentRunner:
