@@ -9,7 +9,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-# 2. Bibliotecas de terceiros
+# 2. Imports locais
 from experiments.run import ExperimentRunner
 from experiments.scenarios import BASELINE_SCENARIOS
 
