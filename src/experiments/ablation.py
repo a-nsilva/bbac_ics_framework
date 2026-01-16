@@ -3,11 +3,13 @@ BBAC Framework - Ablation Study
 Tests individual layer contributions
 """
 
+# 1. Biblioteca padrão
 import json
 import os
 from datetime import datetime
 from pathlib import Path
 
+# 2. Bibliotecas de terceiros
 from experiments.run import ExperimentRunner
 from experiments.scenarios import BASELINE_SCENARIOS
 
