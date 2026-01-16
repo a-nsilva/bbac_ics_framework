@@ -108,9 +108,6 @@ git status
 chmod +x setup.sh
 ./setup.sh
 
-# Install dependencies
-pip install -r requirements.txt
-
 # Source ROS2
 source /opt/ros/humble/setup.bash
 
