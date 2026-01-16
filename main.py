@@ -10,7 +10,7 @@ import os
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from experiments.run import ExperimentRunner
+from src.experiments.run import ExperimentRunner
 from src.experiments.ablation import AblationStudy
 from src.experiments.baseline_comparison import BaselineComparison
 
