@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Scenario Definitions
 Predefined scenarios for experiments
