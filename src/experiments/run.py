@@ -1,8 +1,9 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Experiment Runner
 Main engine for running experiments and collecting metrics
 """
+
+# 2. Bibliotecas de terceiros
 
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
