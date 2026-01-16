@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Robot Agent Nodes
 
@@ -6,13 +5,16 @@ Simulates robot agents with predictable behavior patterns.
 Each robot follows a defined sequence of actions.
 """
 
+# 1. Biblioteca padrão
+import json
+import random
+import uuid
+from datetime import datetime
+
+# 2. Bibliotecas de terceiros
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-import json
-import uuid
-from datetime import datetime
-import random
 
 
 class RobotAgentNode(Node):
