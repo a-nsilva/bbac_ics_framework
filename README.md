@@ -102,6 +102,14 @@ bbac-framework/
 # Clone the repository
 git clone https://github.com/yourusername/bbac-framework.git
 cd bbac-framework
+git status
+
+# Install env
+apt install -y python3-venv
+
+# Load enviorment
+python3 -m venv venv       
+source venv/bin/activate
 
 # Install packages
 chmod +x setup.sh
