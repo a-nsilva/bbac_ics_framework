@@ -8,7 +8,6 @@ Models are saved to models/ directory for use by the BBAC Controller.
 # 1. Biblioteca padrão
 import logging
 import os
-import sys
 from pathlib import Path
 
 # 2. Bibliotecas de terceiros
