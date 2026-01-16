@@ -104,13 +104,6 @@ git clone https://github.com/yourusername/bbac-framework.git
 cd bbac-framework
 git status
 
-# Install env
-apt install -y python3-venv
-
-# Load enviorment
-python3 -m venv venv       
-source venv/bin/activate
-
 # Install packages
 chmod +x setup.sh
 ./setup.sh
@@ -131,18 +124,13 @@ git clone https://github.com/a-nsilva/bbac_ics_dataset.git data/bbac_ics_dataset
 # Minimal test (quick validation)
 python src/tests/bbac_minimal_test.py
 
-# Complete hybrid system test
-python src/tests/bbac_complete_hybrid.py
-
-# Ablation study (layer contribution analysis)
-python src/tests/ablation_study.py
 ```
 
 ### Running ROS2 Nodes
 
 ```bash
 # Terminal 1: Start BBAC Controller
-ros2 run bbac_framework bbac_controller
+ros2 run bbac_framework controller
 
 # Terminal 2: Start Robot Agents
 ros2 run bbac_framework robot_agents
