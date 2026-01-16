@@ -4,6 +4,7 @@ Main engine for running experiments and collecting metrics
 """
 
 # 2. Bibliotecas de terceiros
+# 3. Imports locais
 
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
