@@ -10,7 +10,7 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-# 2. Bibliotecas de terceiros
+# 3. Imports locais
 from experiments.run import ExperimentRunner
 
 
