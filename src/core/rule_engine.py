@@ -9,7 +9,7 @@ This module implements the rule-based access control layer with:
 - Resource constraints
 """
 
-# Biblioteca padrão
+# 1. Biblioteca padrão
 import json
 import logging
 from datetime import datetime
