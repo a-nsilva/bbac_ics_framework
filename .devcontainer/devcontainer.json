@@ -1,22 +1,36 @@
 {
-    "name": "BBAC ROS Development",
-    "image": "osrf/ros:humble-desktop-full",
-    "features": {
-         "ghcr.io/devcontainers/features/git:1": {}
-    },
-   "postCreateCommand": "pip3 install pandas scikit-learn tensorflow matplotlib plotly streamlit jupyter networkx scipy && apt-get update && apt-get install -y python3-pip",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python",
-                "ms-vscode.cpptools",
-                "ms-iot.vscode-ros"
-            ],
-            "settings": {
-                "python.defaultInterpreterPath": "/usr/bin/python3"
-            }
+  "name": "BBAC Framework Development",
+  "image": "osrf/ros:humble-desktop-full",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-iot.vscode-ros",
+        "ms-vscode.cpptools"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python3",
+        "editor.formatOnSave": true,
+        "files.exclude": {
+          "**/__pycache__": true,
+          "**/*.pyc": true
         }
-    },
-    "forwardPorts": [8501, 8888, 8080],
-    "remoteUser": "root"
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "ROS_DOMAIN_ID": "42",
+    "ROS_LOCALHOST_ONLY": "1",
+    "PYTHONPATH": "/workspaces/bbac_ics_framework/src"
+  },
+
+  "postCreateCommand": "pip3 install --upgrade pip && pip3 install -r requirements.txt",
+
+  "forwardPorts": [8888, 8501]
 }
