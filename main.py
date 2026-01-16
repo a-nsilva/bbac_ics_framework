@@ -1,18 +1,15 @@
-#!/usr/bin/env python3
 """
 BBAC Framework - Main Entry Point
 Interactive CLI for running experiments
 """
 
-import sys
+# 1. Biblioteca padrão
 import os
 
-# Add src to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
-from src.experiments.run import ExperimentRunner
-from src.experiments.ablation import AblationStudy
-from src.experiments.baseline_comparison import BaselineComparison
+# 3. Imports locais
+from experiments.run import ExperimentRunner
+from experiments.ablation import AblationStudy
+from experiments.baseline_comparison import BaselineComparison
 
 
 def print_banner():
