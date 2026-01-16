@@ -4,14 +4,13 @@ BBAC Framework - Baseline Comparison
 Compares BBAC against traditional access control methods
 """
 
-import os
-import sys
+# 1. Biblioteca padrão
 import json
-from pathlib import Path
+import os
 from datetime import datetime
+from pathlib import Path
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+# 2. Bibliotecas de terceiros
 from experiments.run import ExperimentRunner
 
 
