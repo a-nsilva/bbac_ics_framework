@@ -10,12 +10,14 @@ This package contains the core decision-making layers of the BBAC framework:
 __version__ = "0.1.0"
 __author__ = "BBAC Framework Contributors"
 
-from .rule_engine import RuleEngine
 from .behavioral_analysis import BehavioralAnalyzer
 from .ml_detection import MLAnomalyDetector
+from .rule_engine import RuleEngine
+from .train_models import ModelTrainer
 
 __all__ = [
-    "RuleEngine",
     "BehavioralAnalyzer",
-    "MLAnomalyDetector"
+    "MLAnomalyDetector",
+    'ModelTrainer',
+    "RuleEngine"
 ]
