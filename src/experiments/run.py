@@ -32,8 +32,9 @@ class ExperimentRunner:
     Manages scenarios, agents, and metrics collection.
     """
     
-    def __init__(self, results_base_dir='results'):
+    def __init__(self, dataset_path: str, results_base_dir='results'):
         """Initialize experiment runner."""
+        self.dataset_path = dataset_path  # ← Armazenar
         self.results_base_dir = results_base_dir
         self.results_dir = None
         self.scenario_manager = ScenarioManager()
@@ -230,7 +231,7 @@ class ExperimentRunner:
         if 'trigger_emergency' in modifications:
             emergency_type = modifications['trigger_emergency']
             
-            if emergency_type is not None:  # ✅ Validar aqui
+            if emergency_type is not None:  # Validar aqui
                 delay = modifications.get('emergency_delay', 30)
                 print(f"  Will trigger emergency '{emergency_type}' after {delay}s")
                 
