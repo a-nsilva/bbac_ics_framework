@@ -31,7 +31,7 @@ class DatasetLoader:
     - anomalies.csv: Known anomaly examples
     """
     
-    def __init__(self, dataset_path: str = "data/data_100k"):
+    def __init__(self, dataset_path: str):
         """
         Initialize the dataset loader.
         
