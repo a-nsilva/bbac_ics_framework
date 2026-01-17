@@ -372,6 +372,10 @@ class RuleEngine:
         Returns:
             True if emergency was triggered successfully
         """
+        if emergency_type is None:
+            logger.debug("Emergency type is None, skipping")
+            return False
+            
         if emergency_type not in self.emergency_rules.get('emergency_rules', {}):
             logger.error(f"Unknown emergency type: {emergency_type}")
             return False
