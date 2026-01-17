@@ -27,7 +27,7 @@ class ModelTrainer:
     Trains BBAC models with real dataset.
     """
     
-    def __init__(self, data_path: str = "data/data_100k", models_path: str = "models"):
+    def __init__(self, data_path: str = "data/100k", models_path: str = "models"):
         """
         Initialize model trainer.
         
