@@ -2,17 +2,18 @@
 BBAC Framework - Experiments Module
 """
 
-from .run import ExperimentRunner
-from .scenarios import ScenarioManager, BASELINE_SCENARIOS
-from .metrics import MetricsCollector
 from .ablation import AblationStudy
 from .baseline_comparison import BaselineComparison
+from .metrics import MetricsCollector
+from .run import ExperimentRunner
+from .scenarios import ScenarioManager
+from .visualization import ResultsPlotter
 
 __all__ = [
-    'ExperimentRunner',
-    'ScenarioManager',
-    'BASELINE_SCENARIOS',
-    'MetricsCollector',
     'AblationStudy',
     'BaselineComparison'
+    'ExperimentRunner',
+    'MetricsCollector',
+    'ResultsPlotter',
+    'ScenarioManager',
 ]
