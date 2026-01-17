@@ -54,15 +54,12 @@ class ExperimentRunner:
         Path(os.path.join(self.results_dir, 'plots')).mkdir(exist_ok=True)
         Path(os.path.join(self.results_dir, 'logs')).mkdir(exist_ok=True)
     
-    def run_scenario(self, scenario_name: str, duration: int = 60, 
-                     config: dict = None):
+    def run_scenario(self, scenario_name: str, duration: int):
         """
         Run a single scenario.
         
         Args:
             scenario_name: Name of scenario to run
-            duration: Duration in seconds
-            config: Optional configuration override
         """
         print(f"\n{'='*70}")
         print(f"RUNNING SCENARIO: {scenario_name}")
@@ -82,7 +79,7 @@ class ExperimentRunner:
         try:
             # Create nodes
             print("[1/4] Initializing BBAC Controller...")
-            controller = BBACController()
+            controller = BBACController(dataset_path=self.dataset_path)
             
             # Apply scenario configuration to controller
             if 'layers_enabled' in scenario_config:
@@ -335,23 +332,3 @@ class ExperimentRunner:
         print(f"  Avg Latency: {metrics.get('avg_latency', 0):.2f}ms")
         print(f"  Max Latency: {metrics.get('max_latency', 0):.2f}ms")
         print(f"  Min Latency: {metrics.get('min_latency', 0):.2f}ms")
-
-
-def main():
-    """Main function for standalone execution."""
-    import argparse
-    
-    parser = argparse.ArgumentParser(description='BBAC Experiment Runner')
-    parser.add_argument('--scenario', type=str, default='normal_operation',
-                       help='Scenario to run')
-    parser.add_argument('--duration', type=int, default=60,
-                       help='Duration in seconds')
-    
-    args = parser.parse_args()
-    
-    runner = ExperimentRunner()
-    runner.run_scenario(args.scenario, duration=args.duration)
-
-
-if __name__ == '__main__':
-    main()
