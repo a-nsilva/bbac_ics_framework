@@ -9,7 +9,7 @@ echo "=========================================="
 echo ""
 
 # Check Python version
-echo "[1/4] Checking Python version..."
+echo "[1/5] Checking Python version..."
 PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
 echo "Python version: $PYTHON_VERSION"
 if [[ ! $PYTHON_VERSION == 3.10* ]]; then
@@ -17,9 +17,21 @@ if [[ ! $PYTHON_VERSION == 3.10* ]]; then
     echo "Current version: $PYTHON_VERSION"
 fi
 
+# Install pip if not present
+echo ""
+echo "[2/5] Checking pip installation..."
+if ! command -v pip3 &> /dev/null; then
+    echo "pip3 not found, installing..."
+    sudo apt-get update
+    sudo apt-get install -y python3-pip
+    echo "pip3 installed successfully"
+else
+    echo "pip3 already installed"
+fi
+
 # Source ROS2 (já vem instalado na imagem)
 echo ""
-echo "[2/4] Sourcing ROS2 environment..."
+echo "[3/5] Sourcing ROS2 environment..."
 source /opt/ros/humble/setup.bash
 
 # Add to bashrc if not already there
@@ -30,14 +42,14 @@ fi
 
 # Install Python dependencies
 echo ""
-echo "[3/4] Installing Python dependencies..."
-pip3 install --upgrade pip
-pip3 install -r requirements.txt
+echo "[4/5] Installing Python dependencies..."
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 echo "Python packages installed"
 
 # Verify installations
 echo ""
-echo "[4/4] Verifying installations..."
+echo "[5/5] Verifying installations..."
 echo "Checking numpy..."
 python3 -c "import numpy; print(f'  numpy: {numpy.__version__}')"
 echo "Checking scipy..."
