@@ -68,8 +68,8 @@ class HumanAgentNode(Node):
             10
         )
         
-        # Work cycle timer (variable timing: 2-8 seconds)
-        timer_period = random.uniform(2.0, 8.0)    ## 4.0, 8.0
+        # Work cycle timer (variable timing: 2-4 seconds)
+        timer_period = random.uniform(2.0, 4.0)    ## 4.0, 8.0
         self.work_timer = self.create_timer(timer_period, self.work_cycle)
         
         self.get_logger().info(
