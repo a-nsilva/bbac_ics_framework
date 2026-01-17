@@ -108,18 +108,11 @@ git status
 chmod +x setup.sh
 ./setup.sh
 
-# Source ROS2
-source /opt/ros/humble/setup.bash
-
 # Clone the dataset (private repository)
 git clone https://github.com/a-nsilva/bbac_ics_dataset.git data/bbac_ics_dataset
-```
 
-### Running Tests
-
-```bash
-# Minimal test (quick validation)
-python src/tests/bbac_minimal_test.py
+# Quick start
+python3 main.py
 
 ```
 
