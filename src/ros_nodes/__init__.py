@@ -9,12 +9,16 @@ This package contains ROS2 node implementations:
 
 __version__ = "0.1.0"
 
-from .controller import BBACController
-from .robot_agents import RobotAgentNode
-from .human_agents import HumanAgentNode
+from .controller import BBACControllerfrom
+from .human_agents import OperatorNode, SupervisorNode, TechnicianNode
+from .robot_agents import AssemblyRobotNode, CameraRobotNode, TransportRobotNode
 
 __all__ = [
-    "BBACController",
-    "RobotAgentNode",
-    "HumanAgentNode"
+    'BBACController',
+    'AssemblyRobotNode',
+    'CameraRobotNode', 
+    'OperatorNode',
+    'SupervisorNode',  
+    'TechnicianNode',
+    'TransportRobotNode'
 ]
