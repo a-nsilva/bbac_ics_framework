@@ -66,8 +66,8 @@ class RobotAgentNode(Node):
             10
         )
         
-        # Work cycle timer (every 3 seconds)
-        self.work_timer = self.create_timer(3.0, self.work_cycle)
+        # Work cycle timer (testei com 3 sec)
+        self.work_timer = self.create_timer(1.5, self.work_cycle)    ## 3.0
         
         self.get_logger().info(
             f'Robot Agent {robot_id} ({robot_type}) initialized in zone {zone}'
