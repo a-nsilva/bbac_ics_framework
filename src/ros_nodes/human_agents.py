@@ -6,6 +6,7 @@ Humans have less predictable patterns compared to robots.
 """
 
 # 1. Biblioteca padrão
+import json
 import random
 import uuid
 from datetime import datetime
