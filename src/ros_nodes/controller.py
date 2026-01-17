@@ -12,6 +12,7 @@ ROS2 Humble compatible
 # 1. Biblioteca padrão
 import json
 import os
+import sys 
 import time
 from datetime import datetime
 from pathlib import Path
