@@ -40,13 +40,15 @@ class BBACController(Node):
     Decision fusion strategy: Weighted voting with configurable thresholds
     """
     
-    def __init__(self):
+    def __init__(self, dataset_path: str, layer_config=None):
         super().__init__('bbac_controller')
+
+        self.dataset_path = dataset_path
         
         self.get_logger().info('Initializing BBAC Controller...')
         
         # Initialize the three layers
-        self._initialize_layers()
+        self._initialize_layers(layer_config)
         
         # ROS2 Publishers and Subscribers
         self.decision_publisher = self.create_publisher(
@@ -106,8 +108,11 @@ class BBACController(Node):
             from core.train_models import ModelTrainer
             
             # Train models
-            self.get_logger().info('Starting model training with dataset...')
-            trainer = ModelTrainer(data_path='data/data_100k', models_path='models')
+            self.get_logger().info(f'Training with dataset: {self.dataset_path}')
+            trainer = ModelTrainer(
+                data_path=self.dataset_path, 
+                models_path='models'
+            )
             
             # Run training
             success = trainer.run()
