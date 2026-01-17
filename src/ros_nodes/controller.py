@@ -102,8 +102,8 @@ class BBACController(Node):
         
         try:
             # Import trainer
-            sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-            from train_models import ModelTrainer
+            #sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+            from core.train_models import ModelTrainer
             
             # Train models
             self.get_logger().info('Starting model training with dataset...')
@@ -285,12 +285,20 @@ class BBACController(Node):
         # Decision fusion logic
         
         # Priority 1: Rule engine has absolute priority for explicit decisions
-        if l1_decision in ['grant', 'deny'] and l1_confidence == 1.0:
-            return l1_decision, l1_confidence, {
-                'fusion_strategy': 'rule_priority',
-                'layers': layer_results,
-                'reason': l1_explanation.get('decision_reason', 'rule_based')
-            }
+        #if l1_decision in ['grant', 'deny'] and l1_confidence == 1.0:
+        #    return l1_decision, l1_confidence, {
+        #        'fusion_strategy': 'rule_priority',
+        #        'layers': layer_results,
+        #        'reason': l1_explanation.get('decision_reason', 'rule_based')
+        #    }
+        if l1_decision in ['grant', 'deny', 'require_approval'] and l1_confidence == 1.0:
+            # Tratar require_approval como deny com flag especial
+            if l1_decision == 'require_approval':
+                return 'deny', 0.8, {
+                    'fusion_strategy': 'require_approval',
+                    'layers': layer_results,
+                    'reason': 'manual_approval_required'
+                }
         
         # Priority 2: If any layer strongly denies (confidence > 0.8) -> DENY
         if (l1_decision == 'deny' and l1_confidence > 0.8) or \
