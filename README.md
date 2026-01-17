@@ -116,6 +116,46 @@ python3 main.py
 
 ```
 
+### Option 1: GitHub Codespaces
+1. Click "Code" → "Create codespace on main"
+2. Wait ~2 minutes for automatic setup
+3. Run: `python3 main.py`
+
+### Option 2: Local Development with Dev Containers
+Requirements: Docker Desktop + VS Code + Dev Containers extension
+
+1. Clone repository:
+```bash
+   git clone https://github.com/your-repo/bbac_ics_framework.git
+   cd bbac_ics_framework
+```
+
+2. Open in VS Code:
+```bash
+   code .
+```
+
+3. Click "Reopen in Container" when prompted
+4. Wait for automatic setup
+5. Run: `python3 main.py`
+
+### Option 3: Manual Installation (Ubuntu 22.04)
+1. Clone repository:
+```bash
+   git clone https://github.com/your-repo/bbac_ics_framework.git
+   cd bbac_ics_framework
+```
+
+2. Run setup script:
+```bash
+   bash setup.sh
+```
+
+3. Run framework:
+```bash
+   python3 main.py
+```
+
 ### Running ROS2 Nodes
 
 ```bash
