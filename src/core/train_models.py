@@ -27,7 +27,7 @@ class ModelTrainer:
     Trains BBAC models with real dataset.
     """
     
-    def __init__(self, data_path: str = "data/100k", models_path: str = "models"):
+    def __init__(self, data_path: str, models_path: str = "models"):
         """
         Initialize model trainer.
         
@@ -37,12 +37,13 @@ class ModelTrainer:
         """
         self.data_path = data_path
         self.models_path = Path(models_path)
-        self.models_path.mkdir(parents=True, exist_ok=True)
-        
-        self.loader = None
+        self.models_path.mkdir(exist_ok=True)    ##parents=True
+        self.loader = DatasetLoader(self.data_path)
+
         self.behavioral_analyzer = None
         self.ml_detector = None
-    
+        
+
     def load_data(self) -> bool:
         """Load dataset."""
         try:
