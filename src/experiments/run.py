@@ -215,17 +215,31 @@ class ExperimentRunner:
             print(f"  Will inject anomalies: {modifications['inject_anomalies']}")
         
         # Handle emergency triggers
+        #if 'trigger_emergency' in modifications:
+        #    emergency_type = modifications['trigger_emergency']
+        #    delay = modifications.get('emergency_delay', 30)
+        #    print(f"  Will trigger emergency '{emergency_type}' after {delay}s")
+        #    
+        #    import threading
+        #    def trigger_later():
+        #        time.sleep(delay)
+        #        controller.trigger_emergency(emergency_type)
+        #    
+        #    threading.Thread(target=trigger_later, daemon=True).start()
+
         if 'trigger_emergency' in modifications:
             emergency_type = modifications['trigger_emergency']
-            delay = modifications.get('emergency_delay', 30)
-            print(f"  Will trigger emergency '{emergency_type}' after {delay}s")
             
-            import threading
-            def trigger_later():
-                time.sleep(delay)
-                controller.trigger_emergency(emergency_type)
-            
-            threading.Thread(target=trigger_later, daemon=True).start()
+            if emergency_type is not None:  # ✅ Validar aqui
+                delay = modifications.get('emergency_delay', 30)
+                print(f"  Will trigger emergency '{emergency_type}' after {delay}s")
+                
+                import threading
+                def trigger_later():
+                    time.sleep(delay)
+                    controller.trigger_emergency(emergency_type)
+                    
+                threading.Thread(target=trigger_later, daemon=True).start()
     
     def _monitor_experiment(self, duration: int, controller):
         """Monitor experiment progress."""
